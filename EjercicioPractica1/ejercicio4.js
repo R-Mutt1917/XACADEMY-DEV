@@ -19,5 +19,6 @@ function imprimirPiramide() {
     console.log(linea + '\n');
   }     
 }
+
 // Ejecutar la función
 imprimirPiramide(); 
