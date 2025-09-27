@@ -1,4 +1,21 @@
 <div class="container">
-  <button (click)="incrementar()">+1</button>
+  <button (click)="sumar(1)" *ngIf="!bonus">+1</button>
+  <button (click)="sumar(10)" *ngIf="bonus">+1</button>
+
   <div>👍 {{contador}}</div>
+</div>
+
+<div>
+  <p>Puntuaciones más altas</p>
+
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Puntuación</th>
+    </tr>
+    <tr *ngFor="let jugador of tablaPuntuaciones">
+      <td>{{jugador.nombre}}</td>
+      <td>{{jugador.puntuacion}}</td>
+    </tr>
+  </table>
 </div>
