@@ -9,21 +9,38 @@ import { Component } from '@angular/core';
   styleUrl: './clicker.scss'
 })
 export class Clicker {
-  contador = 0;
-  bonus = false;
-
-  sumar(cantidad: number): void {
-    this.contador = this.contador + cantidad;
-
-    // cuando alcanzamos 10, habilita un botón de bonus
-    if (this.contador === 10) {
-      this.bonus = true;
-
-      // timeout de 5 segundos, pasado este tiempo el botón volverá a su estado original
-      window.setTimeout(() => {
-        this.bonus = false;
-      }, 5000);
-    }
+  counter = 0;
+  disableBtn = false;
+  textClasses = {
+    danger: this.counter > 10,
+    warning: this.counter > 5 && this.counter <= 10
   }
 
+  textStyles = {
+    'font-size': this.counter <= 10 ? '20px' : '25px'
+  }
+
+  incrementar() {
+    this.counter = this.counter + 1;
+    this.textClasses = {
+      danger: this.counter > 10,
+      warning: this.counter > 5 && this.counter <= 10
+    }
+
+    this.textStyles = {
+      'font-size': this.counter < 11 ? '20px' : '25px'
+    }
 }
+
+  decrementar() {
+    this.counter = this.counter - 1;
+    this.textClasses = {
+      danger: this.counter > 10,
+      warning: this.counter > 5 && this.counter <= 10
+    }
+
+      this.textStyles = {
+        'font-size': this.counter < 11 ? '20px' : '25px',
+    }
+  }
+} 

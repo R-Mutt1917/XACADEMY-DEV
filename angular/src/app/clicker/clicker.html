@@ -1,6 +1,5 @@
 <div class="container">
-  <button (click)="sumar(1)" *ngIf="!bonus">+1</button>
-  <button (click)="sumar(10)" *ngIf="bonus">+1</button>
-
-  <div>👍 {{contador}}</div>
+  <button (click)="decrementar()">-1</button>
+  <button *ngIf="counter < 11" [disabled]="disableBtn" (click)="incrementar()">+1</button>
+  <div [ngClass]="textClasses" [ngStyle]="textStyles">👍 {{counter}}</div>
 </div>
