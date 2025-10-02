@@ -1,4 +1,9 @@
-<app-clicker {counterChange}="handleCounterChange($event)"></app-clicker>
+<div class="container">
+  <button (click)="sumar(1)" *ngIf="!bonus">+1</button>
+  <button (click)="sumar(10)" *ngIf="bonus">+1</button>
+
+  <div>👍 {{contador}}</div>
+</div>
 
 <div>
   <p>Puntuaciones más altas</p>
