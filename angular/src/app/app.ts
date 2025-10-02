@@ -15,5 +15,12 @@ export class App {
     {nombre: 'Pedro', puntuacion: 803},
     {nombre: 'Luis', puntuacion: 720},
   ];
+
+  handleCounterChange(newCounter: number) {
+    this.tablaPuntuaciones.push({
+      nombre: '${counter} Jugar', 
+      puntuacion: newCounter * 100
+    })
+  }
 }
 

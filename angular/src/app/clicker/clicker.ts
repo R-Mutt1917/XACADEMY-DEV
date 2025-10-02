@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-clicker',
@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './clicker.scss'
 })
 export class Clicker {
-  counter = 0;
+  @Input() counter = 0;
+  @Output() counterChange = new EventEmitter();
+  
   disableBtn = false;
   textClasses = {
     danger: this.counter > 10,
@@ -30,6 +32,7 @@ export class Clicker {
     this.textStyles = {
       'font-size': this.counter < 11 ? '20px' : '25px'
     }
+    this.counterChange.emit(this.counter);
 }
 
   decrementar() {
@@ -42,5 +45,6 @@ export class Clicker {
       this.textStyles = {
         'font-size': this.counter < 11 ? '20px' : '25px',
     }
+        this.counterChange.emit(this.counter);
   }
 } 
