@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Clicker } from './clicker/clicker';
 
@@ -9,7 +9,30 @@ import { Clicker } from './clicker/clicker';
   styleUrl: './app.scss',
   imports: [CommonModule, Clicker]
 })
-export class App {
+export class App implements OnInit, AfterViewInit, OnDestroy {
+
+  ocultarContador = false;
+
+  constructor() {
+  console.log('soy el constructor de app');
+}
+
+ngOnInit() {
+  console.log('soy el oninit de app');
+  /*this.timeoutRef = setTimeout(() => {
+    console.log('soy un timeout');
+  }, 20000)*/
+}
+
+ngAfterViewInit(): void {
+  console.log('soy el afterviewinit de app');
+}
+
+ngOnDestroy(): void {
+  /*clearTimeout(this.timeoutRef);*/
+  console.log('soy el ondestroy de app');
+}
+
   tablaPuntuaciones = [
     {nombre: 'Juan', puntuacion: 855},
     {nombre: 'Pedro', puntuacion: 803},

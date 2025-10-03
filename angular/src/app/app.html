@@ -1,5 +1,6 @@
-<app-clicker {counterChange}="handleCounterChange($event)"></app-clicker>
-
+<app-clicker *ngIf="!ocultarContador" {counterChange}="handleCounterChange($event)"></app-clicker>
+<button (click)="ocultarContador = true">Ocultar contador</button>
+<button (click)="ocultarContador = false">Mostrar contador</button>
 <div>
   <p>Puntuaciones más altas</p>
 
