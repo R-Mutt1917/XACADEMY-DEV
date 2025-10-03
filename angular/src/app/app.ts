@@ -17,20 +17,20 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
   console.log('soy el constructor de app');
 }
 
-ngOnInit() {
-  console.log('soy el oninit de app');
-  /*this.timeoutRef = setTimeout(() => {
-    console.log('soy un timeout');
-  }, 20000)*/
+  ngOnInit() {
+    console.log('soy el oninit de app');
+    /*this.timeoutRef = setTimeout(() => {
+      console.log('soy un timeout');
+    }, 20000)*/
 }
 
-ngAfterViewInit(): void {
-  console.log('soy el afterviewinit de app');
+  ngAfterViewInit(): void {
+    console.log('soy el afterviewinit de app');
 }
 
-ngOnDestroy(): void {
-  /*clearTimeout(this.timeoutRef);*/
-  console.log('soy el ondestroy de app');
+  ngOnDestroy(): void {
+    /*clearTimeout(this.timeoutRef);*/
+    console.log('soy el ondestroy de app');
 }
 
   tablaPuntuaciones = [
