@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-clicker',
@@ -8,9 +8,30 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './clicker.html',
   styleUrl: './clicker.scss'
 })
-export class Clicker {
+export class Clicker implements OnInit, AfterViewInit, OnDestroy {
   @Input() counter = 0;
   @Output() counterChange = new EventEmitter();
+  timeoutRef?: ReturnType<typeof setTimeout>;
+
+  constructor() {
+  console.log('soy el constructor de clicker');
+}
+
+  ngOnInit() {
+    console.log('soy el oninit de clicker');
+    this.timeoutRef = setTimeout(() => {
+      console.log('soy un timeout');
+    }, 3000)
+}
+
+  ngAfterViewInit(): void {
+    clearTimeout(this.timeoutRef);
+    console.log('soy el afterviewinit de clicker');
+}
+
+  ngOnDestroy(): void {
+    console.log('soy el ondestroy de clicker');
+}
   
   disableBtn = false;
   textClasses = {
