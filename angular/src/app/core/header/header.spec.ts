@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Clicker } from './clicker';
+import { Header } from './header';
 
-describe('Clicker', () => {
-  let component: Clicker;
-  let fixture: ComponentFixture<Clicker>;
+describe('Header', () => {
+  let component: Header;
+  let fixture: ComponentFixture<Header>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Clicker]
+      imports: [Header]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Clicker);
+    fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

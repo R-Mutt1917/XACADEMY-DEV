@@ -1,17 +1,4 @@
-<app-clicker *ngIf="!ocultarContador" {counterChange}="handleCounterChange($event)"></app-clicker>
-<button (click)="ocultarContador = true">Ocultar contador</button>
-<button (click)="ocultarContador = false">Mostrar contador</button>
-<div>
-  <p>Puntuaciones más altas</p>
+ <div class="wrapper">
+  <app-header></app-header>
 
-  <table>
-    <tr>
-      <th>Nombre</th>
-      <th>Puntuación</th>
-    </tr>
-    <tr *ngFor="let jugador of tablaPuntuaciones">
-      <td>{{jugador.nombre}}</td>
-      <td>{{jugador.puntuacion}}</td>
-    </tr>
-  </table>
-</div>
+ </div>
