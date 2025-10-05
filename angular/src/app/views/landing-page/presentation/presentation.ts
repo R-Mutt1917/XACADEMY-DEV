@@ -3,7 +3,8 @@ import { Header } from "../../../core/header/header";
 
 @Component({
   selector: 'app-presentation',
-  imports: [Header],
+  imports: [
+  ],
   templateUrl: './presentation.html',
   styleUrl: './presentation.scss'
 })
