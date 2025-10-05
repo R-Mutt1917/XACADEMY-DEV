@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Header } from './core/header/header';
+import { LandingPage } from "./views/landing-page/landing-page";
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import { Header } from './core/header/header';
   styleUrl: './app.scss',
   imports: [
     CommonModule,
-    Header
-  ]
+    Header,
+    LandingPage
+]
 })
 export class App {
 
