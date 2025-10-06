@@ -1,19 +1,24 @@
 .menu {
+    margin-left: 100px;
     flex-grow: 2;
-    color: #343f44;
-    margin-left: 80px;
 }
 
 .menu ul {
-    list-style-type: none;
     display: flex;
+    list-style-type: none;
 }
 
-.menu li{
+.menu li {
     margin-right: 30px;
     font-size: 600;
-}
+    a {
+        color: #343f44;
+        text-decoration: none;
+        padding: 5px;
+    }
 
-.menu li:hover {
-    color: #2e86fd;
+    a.active {
+        color: white;
+        background-color: #fa593c;
+    }
 }

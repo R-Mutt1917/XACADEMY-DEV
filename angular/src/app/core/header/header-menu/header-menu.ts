@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, input } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MenuItem } from '../../model/menu-item.model';
 @Component({
   selector: 'app-header-menu',
-  imports: [
-    CommonModule,
-  ],
+  standalone: true,
+    imports: [
+      CommonModule,
+      RouterLink,
+      RouterLinkActive,
+    ],
   templateUrl: './header-menu.html',
-  styleUrl: './header-menu.scss'
+  styleUrls: ['./header-menu.scss']
 })
 export class HeaderMenu {
-  @Input() menuItems?: {
-    text: string,
-    route: string,
-  }[];
+  @Input() menuItems?: MenuItem[];
 }

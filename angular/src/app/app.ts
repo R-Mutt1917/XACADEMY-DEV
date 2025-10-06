@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Header } from './core/header/header';
 import { LandingPage } from "./views/landing-page/landing-page";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { LandingPage } from "./views/landing-page/landing-page";
   imports: [
     CommonModule,
     Header,
-    LandingPage
+    RouterOutlet,
 ]
 })
 export class App {
