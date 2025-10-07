@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Presentation } from './presentation/presentation';
 import { IconCard } from '../../core/icon-card/icon-card';
 import { CommonModule } from '@angular/common';
+import { Feature } from '../../core/model/feature.model';
 
 @Component({
   selector: 'app-landing-page',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './landing-page.scss'
 })
 export class LandingPage {
-  features = [
+  features: Feature[] = [
     {
       icon: 'add_box',
       title: 'Easy to Use',
