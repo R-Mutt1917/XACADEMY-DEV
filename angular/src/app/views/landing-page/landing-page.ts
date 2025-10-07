@@ -3,6 +3,7 @@ import { Presentation } from './presentation/presentation';
 import { IconCard } from '../../core/icon-card/icon-card';
 import { CommonModule } from '@angular/common';
 import { Feature } from '../../core/model/feature.model';
+import { FeaturesService } from '../../core/services/features.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -15,21 +16,12 @@ import { Feature } from '../../core/model/feature.model';
   styleUrl: './landing-page.scss'
 })
 export class LandingPage {
-  features: Feature[] = [
-    {
-      icon: 'add_box',
-      title: 'Easy to Use',
-      description: 'Editing and customizing Essential Landing is easy and fast.'
-    },  
-    {
-      icon: 'star_half',
-      title: '100% Responsive',
-      description: 'Editing and customizing Essential Landing is easy and fast.'
-    },  
-    {
-      icon: 'system_update_alt',
-      title: '50+ New Pages',
-      description: 'Editing and customizing Essential Landing is easy and fast.'
-    },
-  ];
+  features?: Feature[];
+
+  constructor(private featureService: FeaturesService) { }
+
+  ngOnInit() {
+    this.features = this.featureService.features;
+  }
 }
+
